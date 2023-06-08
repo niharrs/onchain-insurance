@@ -12,7 +12,16 @@ module.exports = {
       url: WOWEN_RPC_URL,
       accounts: [WOWEN_PRIV_KEY],
       chainId: 981,
+      blockGasLimit: 60000000,
     },
   },
-  solidity: "0.8.18",
+  solidity: {
+    version: "0.8.18",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 2 ** 32 - 1,
+      },
+    },
+  },
 };

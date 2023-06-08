@@ -8,7 +8,7 @@ async function main() {
 
   // Call contract functions
   const payPremiumTxResponse = await insurance.payPremium({
-    value: ethers.utils.parseEther("0.1"),
+    value: ethers.utils.parseEther("0.11"),
   });
   await payPremiumTxResponse.wait(1);
   console.log("Premium paid!");
