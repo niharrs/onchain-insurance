@@ -1,0 +1,11 @@
+{
+  "name": "onchain-insurance",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://niharrs@github.com/niharrs/onchain-insurance.git",
+  "author": "Niharika",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.15.0"
+  }
+}
