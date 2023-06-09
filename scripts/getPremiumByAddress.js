@@ -22,3 +22,8 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+/**
+ * RESULT:
+ * BigNumber { value: "1320000000000000000" }
+ */

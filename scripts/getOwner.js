@@ -18,3 +18,8 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+/**
+ * RESULT:
+ * 0x545e3FCFcf6E34C73F881E92eBD1Dd30D5CfB8cA
+ */
