@@ -2,7 +2,7 @@ const { ethers } = require("hardhat");
 
 async function main() {
   // Retrieve the contract instance using the contract address
-  const contractAddress = "0x0048858826f97b0908793F914630b1739D5f3422";
+  const contractAddress = "0x210c68419CD16a1116c088A22e30C79D1bf3940b";
   const Insurance = await ethers.getContractFactory("Insurance");
   const insurance = await Insurance.attach(contractAddress);
 
@@ -39,7 +39,7 @@ main()
   from: '0x545e3FCFcf6E34C73F881E92eBD1Dd30D5CfB8cA',
   gasPrice: BigNumber { value: "1500000000" },
   gasLimit: BigNumber { value: "30726" },
-  to: '0x0048858826f97b0908793F914630b1739D5f3422',
+  to: '0xbEE10F0Bef849afa9f1992697b3eF2569AeCbC05',
   value: BigNumber { value: "110000000000000000" },
   nonce: 13,
   data: '0x29c08ba2',

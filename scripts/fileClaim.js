@@ -3,13 +3,13 @@ const { ethers } = require("hardhat");
 
 async function main() {
   // Retrieve the contract instance using the contract address
-  const contractAddress = "0x0048858826f97b0908793F914630b1739D5f3422";
+  const contractAddress = "0x210c68419CD16a1116c088A22e30C79D1bf3940b";
   const Insurance = await ethers.getContractFactory("Insurance");
   const insurance = await Insurance.attach(contractAddress);
 
   const newAddress = "0x1e281c39668a16ce6fa329906439c8541e110e9f"; // Replace with input from UI
   const transactionHash = "This is a tx hash"; // Replace with input from UI
-  const amount = ethers.BigNumber.from(ethers.utils.parseEther("0.2")); // Replace with input from UI
+  const amount = ethers.BigNumber.from(ethers.utils.parseEther("0.15")); // Replace with input from UI
   const comments = "Some comment"; // Replace with input from UI
 
   // Call contract functions
@@ -48,7 +48,7 @@ Claim filed!
   from: '0x545e3FCFcf6E34C73F881E92eBD1Dd30D5CfB8cA',
   gasPrice: BigNumber { value: "1500000000" },
   gasLimit: BigNumber { value: "70233" },
-  to: '0x0048858826f97b0908793F914630b1739D5f3422',
+  to: '0xbEE10F0Bef849afa9f1992697b3eF2569AeCbC05',
   value: BigNumber { value: "0" },
   nonce: 14,
   data: '0x09e321fb0000000000000000000000001e281c39668a16ce6fa329906439c8541e110e9f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000002c68af0bb14000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000115468697320697320612074782068617368000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c536f6d6520636f6d6d656e740000000000000000000000000000000000000000',

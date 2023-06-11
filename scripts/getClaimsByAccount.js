@@ -3,11 +3,11 @@ const { ethers } = require("hardhat");
 
 async function main() {
   // Retrieve the contract instance using the contract address
-  const contractAddress = "0x0048858826f97b0908793F914630b1739D5f3422";
+  const contractAddress = "0x210c68419CD16a1116c088A22e30C79D1bf3940b";
   const Insurance = await ethers.getContractFactory("Insurance");
   const insurance = await Insurance.attach(contractAddress);
 
-  const address = "0x545e3FCFcf6E34C73F881E92eBD1Dd30D5CfB8cA"; //Replace with UI
+  const address = "0x1e281c39668A16CE6FA329906439c8541e110E9f"; //Replace with UI
 
   // Call contract functions
   const getClaimsByAccountTxResponse = await insurance.getClaimsByAccount(
