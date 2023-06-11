@@ -21,6 +21,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/getOwner.js --network wowen
  * RESULT:
  * 0x545e3FCFcf6E34C73F881E92eBD1Dd30D5CfB8cA
  */

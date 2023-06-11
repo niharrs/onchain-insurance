@@ -26,6 +26,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/payPremium.js --network wowen
  * RESULT:
  * Premium paid!
 -------------

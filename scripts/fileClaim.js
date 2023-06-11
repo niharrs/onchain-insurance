@@ -35,6 +35,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/fileClaim.js --network wowen
  * RESULT:
 Claim filed!
 -------------

@@ -25,6 +25,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/getClaimsByAccount.js --network wowen
  * RESULT:
  *[ BigNumber { value: "2" }, BigNumber { value: "3" } ]
  */

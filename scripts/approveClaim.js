@@ -25,7 +25,9 @@ main()
     console.error(error);
     process.exit(1);
   });
+
 /**
+ * Script command:  npx hardhat run scripts/approveClaim.js --network wowen
  * RESULT:
 Claim approved!
 -------------

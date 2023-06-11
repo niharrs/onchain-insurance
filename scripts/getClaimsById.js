@@ -23,6 +23,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/getClaimsById.js --network wowen
  * RESULT:
  * [
   BigNumber { value: "0" },

@@ -27,6 +27,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/rejectClaim.js --network wowen
  * RESULT:
 Claim rejected!
 -------------

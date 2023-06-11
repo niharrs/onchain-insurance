@@ -20,3 +20,5 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+// Script command:  npx hardhat run scripts/deploy.js --network wowen

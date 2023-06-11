@@ -25,6 +25,7 @@ main()
   });
 
 /**
+ * Script command:  npx hardhat run scripts/getPremiumByAddress.js --network wowen
  * RESULT:
  * BigNumber { value: "1320000000000000000" }
  */
