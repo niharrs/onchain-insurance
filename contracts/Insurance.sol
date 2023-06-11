@@ -7,11 +7,12 @@ error NotOwner();
 contract Insurance {
     address[] public insurers;
     mapping(address => uint256) public addressToPremium;
+    mapping(uint256 => uint256) public premiumToTimestamp;
 
     mapping(uint256 => Claim) public claims;
     uint public claimCounter;
 
-    mapping(address => Claim[]) public addressToClaims;
+    mapping(address => uint256[]) public addressToClaims;
 
     address public immutable i_owner;
 
@@ -28,6 +29,7 @@ contract Insurance {
         string transactionHash;
         uint amount;
         string comments;
+        uint timestamp;
         ClaimStatus status;
     }
 
@@ -52,6 +54,7 @@ contract Insurance {
         require(msg.value >= 0.1 * 1e18, "Premium should be 0.1 Wowen");
         insurers.push(msg.sender);
         addressToPremium[msg.sender] += msg.value;
+        premiumToTimestamp[addressToPremium[msg.sender]] = block.timestamp;
 
         emit PremiumPaid(msg.sender, msg.value, block.timestamp);
     }
@@ -73,12 +76,13 @@ contract Insurance {
             transactionHash: _transactionHash,
             amount: _amount,
             comments: _comments,
+            timestamp: block.timestamp,
             status: ClaimStatus.PENDING
         });
 
         claims[claimCounter] = newClaim;
         claimCounter++;
-        addressToClaims[msg.sender].push(newClaim);
+        addressToClaims[msg.sender].push(newClaim.claimNumber);
 
         emit ClaimFiled(
             newClaim.claimNumber,
@@ -93,6 +97,9 @@ contract Insurance {
 
     function rejectClaim(uint256 _id) public onlyOwner {
         Claim storage claim = claims[_id];
+        // uint256[] ids = addressToClaims[claim.claimant];
+
+        // updateClaim.status = ClaimStatus.REJECTED;
         claim.status = ClaimStatus.REJECTED;
 
         emit ClaimRejected(claim.claimNumber);
@@ -100,6 +107,8 @@ contract Insurance {
 
     function approveClaim(uint256 _id) public payable onlyOwner {
         Claim storage claim = claims[_id];
+        // Claim storage updateClaim = addressToClaims[claim.claimant][_id];
+        // updateClaim.status = ClaimStatus.APPROVED;
         claim.status = ClaimStatus.APPROVED;
         address to = claim.newAddress;
         uint256 amount = claim.amount;
@@ -111,7 +120,7 @@ contract Insurance {
 
     function getClaimsByAccount(
         address _account
-    ) public view returns (Claim[] memory) {
+    ) public view returns (uint256[] memory) {
         return addressToClaims[_account];
     }
 
