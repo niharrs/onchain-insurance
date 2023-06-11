@@ -1,8 +1,9 @@
 const { ethers } = require("hardhat");
+const addressContract = require("./contractAddress");
 
 async function main() {
   // Retrieve the contract instance using the contract address
-  const contractAddress = "0x210c68419CD16a1116c088A22e30C79D1bf3940b";
+  const contractAddress = addressContract;
   const Insurance = await ethers.getContractFactory("Insurance");
   const insurance = await Insurance.attach(contractAddress);
 
